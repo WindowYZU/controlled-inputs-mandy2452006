@@ -73,9 +73,12 @@ public class JList2 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String value=jTextField1.getText();
-        DefaultListModel model=(DefaultListModel) jList1.getModel();
-        model.add(0,value);
-        jList1.updateUI();
+        if(value!=null&&value.equals("")==false){
+            DefaultListModel model=(DefaultListModel) jList1.getModel();
+            model.add(0,value);
+            jTextField1.setText("");
+            jList1.updateUI();
+        }
         //取得 DefaultListModel 並且新增資料
         
         //////////////////////////////////
