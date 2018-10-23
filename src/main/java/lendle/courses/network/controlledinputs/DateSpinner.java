@@ -7,6 +7,8 @@ package lendle.courses.network.controlledinputs;
 
 import java.awt.FlowLayout;
 import java.util.Calendar;
+import static java.util.Calendar.DATE;
+import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerDateModel;
@@ -30,8 +32,10 @@ public class DateSpinner {
         frame.setLayout(new FlowLayout());
         JSpinner spinner=new JSpinner();
         //create a SpinnerDateModel
-        SpinnerNumberModel model=new SpinnerNumberModel();
-       
+        SpinnerDateModel model=new SpinnerDateModel();
+        model.setCalendarField(Calendar,DATE);
+        spinner.setModel(model);
+        
         ///////////////////////////////////////////////////
         frame.add(spinner);
         
